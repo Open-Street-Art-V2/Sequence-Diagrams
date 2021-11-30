@@ -1,0 +1,12 @@
+title SD_STB-UC03
+
+Acteur->Système: Demande d'authentification
+Système-->Acteur: Affiche le formulaire d'authentification
+Acteur->Système: Saisie et envoie des données
+Système->Système: Verification
+alt Données Valide
+Système-->Acteur: Envoie d'un message de succés d'operation 
+Système-->Acteur: Redirection vers la carte des oeuvres
+else Données invalides
+Système-->Acteur: Message de succés d'operation
+

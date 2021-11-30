@@ -1,0 +1,28 @@
+title SD_STB-UC18
+
+Acteur->+Systéme: Demande de formulaire de recherche
+Systéme-->-Acteur: Affiche le formulaire
+alt Oeuvre
+    Acteur->+Systéme: Saisit (nomOeuvre)
+    alt existe
+        note over Systéme,Acteur:SD_Detail_Oeuvre
+    else n'existe pas
+         Systéme-->-Acteur:cette oeuvre n'existe pas
+    end
+else Ville
+     Acteur->+Systéme: Saisit (nomVille)
+     alt existe
+        Systéme-->-Acteur: Affiche la liste de toutes les oeuvres dans la ville
+    else n'existe pas
+         Systéme-->-Acteur:il n y'a pas d'oeuvre dans cette ville
+    end
+else Artiste
+     Acteur->+Systéme:  Saisit (nomArtiste)
+     alt existe
+        Systéme-->-Acteur: Affiche toutes les oeuvres de l'artiste
+    else n'existe pas
+         Systéme-->-Acteur: Cet artiste n'as pas d'oeuvre / n'existe pas
+    end
+end
+
+

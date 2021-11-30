@@ -1,0 +1,12 @@
+title SD_STB-UCO1
+
+Acteur->Système:Clique sur le boutton de gestion de langue
+Système->Acteur: Affiche les langues disponibles
+alt Français
+Acteur->Système: Choisit le Français
+Système->Système:Changement de langue
+Système->Acteur: Mise à jour
+else Anglais
+Acteur->Système: Choisit l'Anglais
+Système->Système:Changement de langue
+Système->Acteur: Mise à jour

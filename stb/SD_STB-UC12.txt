@@ -1,0 +1,37 @@
+title SD_STB-UC12
+
+alt Ajout
+    Acteur->Système: Demande le formulaire d'ajout
+    Système-->Acteur: Affiche le formulaire d'ajout
+    Acteur->Système: Saisie et envoie des données
+    Système->Système: verification
+    alt Données valides
+        Système-->Acteur: Envoie d'un message de succés d'operation
+    else Données Non valides
+         Système-->Acteur: Envoie d'un message d'echec
+    end
+    
+else Modification 
+
+     note over Acteur,Système: SD_STB-UC05
+     Acteur->Système: Demande le formulaire de modification
+     Système-->Acteur: Affiche le formulaire de modification
+     note over Système, Système : Le système affiche le formulaire avec les champs préremplis
+     Acteur->Système: Modification et envoie des données
+     Système->Système: verification
+     alt Données valides
+        Système-->Acteur: Envoie d'un message de succés d'operation
+    else Données Non valides
+         Système-->Acteur: Envoie d'un message d'echec
+    end
+else Suppression
+     note over Acteur,Système: SD_STB-UC05
+     Acteur->Système: Demande suppression 
+     Système-->Acteur: Demande de confirmation
+     alt Confirmer
+        Acteur->Système: Confirmation la suppression
+        Système->Système: Suppression
+        Système->Acteur : Message de succés d'operation
+     else  Annuler
+        Acteur->Système: Annule la suppression
+end
