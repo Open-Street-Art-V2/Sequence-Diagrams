@@ -1,0 +1,24 @@
+title SD_DAL-UC09
+
+Navigateur -> UI : Saisie du formulaire de contribution à une oeuvre
+UI -> UI : Vérification des données saisies
+
+alt Données correctes
+    UI -> API : <<HTTP>>\n POST : /api/contrib/arts
+    API -> API : Vérification des données du formulaire
+    
+    alt Données correctes
+        API -> BDD : Ajout de la proposition d'oeuvre
+        BDD -> API : Réponse de la requête SQL    
+        API -> UI : Envoyer un code de succès
+        UI -> Navigateur : Afficher un message de succès
+    else Données incorrectes
+        API -> UI : Envoyer un code d'erreur
+        UI -> Navigateur : Afficher un message d'erreur
+    end
+    
+else Données incorrectes
+    UI -> Navigateur : Afficher un message d'erreur
+end
+
+
