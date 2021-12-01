@@ -1,0 +1,11 @@
+title SD_STB-UC05
+
+Acteur->Système: Demander la consultation d'une oeuvre
+Système->Système: Vérification et récupération des informations de l'oeuvre
+
+alt L'oeuvre existe
+    Système->Acteur: Afficher les détails de l'oeuvre
+else L'oeuvre n'existe pas
+    Système->Acteur: Afficher un message d'erreur
+end
+

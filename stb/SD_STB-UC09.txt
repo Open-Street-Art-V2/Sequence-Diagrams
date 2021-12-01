@@ -1,0 +1,13 @@
+title SD_STB-UC09
+
+Acteur->Système: Demander la proposition d'une oeuvre
+Système->Acteur: Afficher le formulaire de proposition d'oeuvre
+Acteur->Système: Envoyer le formulaire avec les champs complétés
+Système->Système: Vérification des données
+
+alt Données correctes
+    Système->Système: Ajout de la proposition de l'oeuvre
+    Système->Acteur: Afficher un message de succès
+else Données incorrectes
+    Système->Acteur: Afficher un message d'echec
+end

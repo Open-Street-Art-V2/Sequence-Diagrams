@@ -1,0 +1,5 @@
+title SD_STB-UC11
+
+Acteur->Système: Demander la consultation de son profil
+Système->Système: Récupération des données de l'utilisateur
+Système->Acteur: Affichage du profil de l'utilisateur

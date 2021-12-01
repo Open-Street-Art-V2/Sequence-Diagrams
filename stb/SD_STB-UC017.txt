@@ -1,0 +1,21 @@
+title SD_STB-UC17
+
+note over Acteur,Système:
+SD_STB-UC18
+Rechercher une ville
+end note
+
+Acteur->Système: Demander l'exportation de la liste des oeuvres
+Système->Acteur: Affichage des choix du format de l'exportation
+
+alt Format PDF
+    Acteur->Système: Choisir l'exportation en format PDF
+    Système->Système: Récupération des oeuvres de la ville
+    Système->Système: Génération du fichier PDF
+    Système->Acteur: Retourner le fichier PDF
+else Format CSV
+    Acteur->Système: Choisir l'exportation en fromat CSV
+    Système->Système: Récupération des oeuvres de la ville
+    Système->Système: Génération du fichier CSV
+    Système->Acteur: Retourner le fichier CSV
+end

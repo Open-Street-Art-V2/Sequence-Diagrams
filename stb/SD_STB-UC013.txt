@@ -1,0 +1,19 @@
+title SD_STB-UC13
+
+note over Acteur, Système:
+    SD_STB-UC11
+    Consulter son profil
+end note
+
+
+Acteur->Système: Demande de modification des informations personnelles
+Système->Acteur: Afficher le formulaire à remplir
+Acteur->Système: Remplir les informations
+Système->Système: Vérification des informations
+
+alt Données correctes
+    Système->Système: Modification du profil de l'utilisateur
+    Système->Acteur: Afficher un message de succès
+else Données incorrectes
+    Système->Acteur: Afficher un message d'échec
+end

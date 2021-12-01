@@ -1,0 +1,6 @@
+title SD_STB-UC04
+
+Acteur->Système: Demander la carte des oeuvres
+Système->Système: Localiser l'acteur
+Système->Système: Rechercher les oeuvres à proximité
+Système->Acteur: Afficher la carte des oeuvres

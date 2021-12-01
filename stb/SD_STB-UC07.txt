@@ -1,0 +1,18 @@
+title SD_STB-UC07
+
+Acteur->Système: Demander la liste des propositions des oeuvres
+Système->Système: Récupération des propositions
+Système->Acteur: Afficher la liste
+Acteur->Système: Consulter une proposition d'oeuvre
+Système->Système: Récupération des données
+Système->Acteur: Afficher les données de la proposition
+
+alt Accepter la proposition
+Acteur->Système: Validation de la proposition
+Système->Système: Enregistrer l'oeuvre
+Système->Acteur: Afficher un message de succès
+else Refuser la proposition
+Acteur->Système: Demander la suppression de la proposition
+Système->Système: Supprimer la proposition
+Système->Acteur: Mettre à jour la liste des propositions des oeuvres
+end
