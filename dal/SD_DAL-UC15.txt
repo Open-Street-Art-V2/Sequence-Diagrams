@@ -1,0 +1,20 @@
+title SD_DAL-UC15
+
+note over Navigateur,UI,API,BDD: SD_DAL-UC05
+alt Ajout
+Navigateur-> UI :clique sur le bouton ajouter aux favoris
+UI->API: /api/favoris/{bool}
+API->BDD: postAddFavoris(bool)
+BDD->API: réponse
+API->UI : reponse HTTP
+UI->Navigateur : Message de succés d'operation
+
+else Retrait
+Navigateur-> UI :Clique sur le bouton retirer des favoris
+UI->API: /api/favoris/{bool}
+API->BDD: deleteFavoris(bool)
+BDD->API: réponse
+API->UI : reponse HTTP
+UI->Navigateur : Message de succés d'operation
+end
+

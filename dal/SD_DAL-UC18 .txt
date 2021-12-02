@@ -1,0 +1,34 @@
+title SD_DAL-UC18
+
+Navigateur->Navigateur : Saisie du nom
+
+alt Oeuvre
+Navigateur->UI : Envoie le nom saisie
+UI->API: /api/arts?name/{name}
+API->*BLL: getArtsByName(name)
+BLL->BLL : Verification()
+BLL->*DAL: getArtsByName(name)
+DAL->BDD: requête Select 
+BDD->DAL: Réponse 
+DAL->BLL :Envoie des données
+destroy DAL
+BLL->API: Envoie les données
+destroy BLL
+API->UI:Envoie des données au format json
+UI->Navigateur : Affiche la liste des oeuvres
+
+else Ville
+Navigateur->UI : Envoie le nom saisie
+UI->API: /api/cities?name/{name}
+API->*BLL: getCityByName(name)
+BLL->BLL : Verification()
+BLL->*DAL: getCityByName(name)
+DAL->BDD: Requête Select 
+BDD->DAL: Réponse 
+DAL->BLL :Envoie des données
+destroy DAL
+BLL->API: Envoie des données
+destroy BLL
+API->UI:Envoie des données au format json
+UI->Navigateur : Affiche la liste des oeuvres
+end
