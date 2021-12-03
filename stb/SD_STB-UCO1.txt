@@ -1,4 +1,4 @@
-title SD_STB-UCO1
+title SD_STB-UC01
 
 Acteur->Système:Clique sur le boutton de gestion de langue
 Système->Acteur: Affiche les langues disponibles

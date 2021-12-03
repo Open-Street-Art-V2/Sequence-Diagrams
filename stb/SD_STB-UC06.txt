@@ -2,11 +2,12 @@ title SD_STB-UC06
 alt Ajout
     Acteur->Système: Demande le formulaire d'ajout
     Système-->Acteur: Affiche le formulaire d'ajout
-    Acteur->Système: Saisie et envoie des données
-    Système->Système: verification
-    alt Données valides
+    Acteur->Système: Saisie et envoie du formulaire
+    Système->Système: Validation du formulaire
+    alt  valide
+        Système->Système: Ajoute l'oeuvre
         Système-->Acteur: Envoie d'un message de succés d'operation
-    else Données Non valides
+    else Non valide
          Système-->Acteur: Envoie d'un message d'echec
     end
     
@@ -16,11 +17,12 @@ else Modification
      Acteur->Système: Demande le formulaire de modification
      Système-->Acteur: Affiche le formulaire de modification
      note over Système, Système : Le système affiche le formulaire avec les champs préremplis
-     Acteur->Système: Modification et envoie des données
-     Système->Système: verification
-     alt Données valides
+     Acteur->Système: Modification et envoie du formulaire
+     Système->Système:  validation du formulaire
+     alt valide
+        Système->Système: Modification de l'oeuvre
         Système-->Acteur: Envoie d'un message de succés d'operation
-    else Données Non valides
+    else Non valide
          Système-->Acteur: Envoie d'un message d'echec
     end
 else Suppression
@@ -34,4 +36,5 @@ else Suppression
      else  Annuler
         Acteur->Système: Annule la suppression
 end
+
 

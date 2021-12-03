@@ -1,13 +1,15 @@
 title STB-UC15
 
-note over User,SYS: STB-UC05
+note over Acteur,Système: STB-UC05
+
 alt exist
-     User->SYS:Clique sur le btn retirer des favoris
-     SYS->SYS: retire l'oeuvre de la liste des favoris
-     SYS->User: Message de succés d'operation
+     Acteur->Système :Clique sur le bouton retirer des favoris
+     Système->Système: retire l'oeuvre de la liste des favoris
+     Système->Acteur: Message de succés d'operation
 else n'existe pas
-     User->SYS:Clique sur le btn ajouter aux favoris
-     SYS->SYS: Ajoute l'oeuvre dans la liste des favoris
-     SYS->User: Message de succés d'operation
+     Acteur->Système:Clique sur le bouton ajouter aux favoris
+     Système->Système: Ajoute l'oeuvre dans la liste des favoris
+     Système->Acteur: Message de succés d'operation
 end
+
 
